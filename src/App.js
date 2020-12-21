@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import WeatherFetch from './weatherFetch';
+import DelhiWeather from './DelhiWeather';
+import MumbaiWeather from './MumbaiWeather';
+
+const styles = {
+  color: 'purple',
+  fontSize: 10,
+  border: "1px solid purple",
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style = {styles} className='row' >
+        <h1>Weather App</h1>
+        <div><WeatherFetch /></div>
+        <div><DelhiWeather /></div>
+        <div><MumbaiWeather /> </div>
     </div>
   );
 }
