@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from "react";
 
-function WeatherFetch(){
-    const api_key = 'API_KEY';
+function WeatherFetch(props){
+    const api_key = process.env.REACT_APP_API_KEY;
+    const city = props.city;
     const [mainTemp, setMainTemp] = useState('');
     const [main, setMain] = useState('');
     const [iconId, setIconId] = useState('');
-
     useEffect (()=>{
         fetch(
-            'http://api.openweathermap.org/data/2.5/weather?q=Bengaluru&appid=ead7a379a75d78942109cee1b98f7c74'
+            'http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+api_key
         ).then ( (res) => res.json())
         .then((data) => {
             console.log(data);
@@ -20,7 +20,7 @@ function WeatherFetch(){
 
     return (
         <div>
-        <p>Bengaluru</p>
+        <p>{props.city}</p>
         <p>{Date()} </p>
         <p>{mainTemp} Degree</p>
         <p>{main}</p>

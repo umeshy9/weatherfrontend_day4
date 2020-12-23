@@ -1,8 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import WeatherFetch from './weatherFetch';
-import DelhiWeather from './DelhiWeather';
-import MumbaiWeather from './MumbaiWeather';
 
 const styles = {
   color: 'purple',
@@ -11,12 +9,14 @@ const styles = {
 };
 
 function App() {
+  const api_key = process.env.REACT_APP_API_KEY;
   return (
     <div style = {styles} className='row' >
         <h1>Weather App</h1>
-        <div><WeatherFetch /></div>
-        <div><DelhiWeather /></div>
-        <div><MumbaiWeather /> </div>
+        <div><WeatherFetch city = {'Bangalore'}/></div>
+        <div><WeatherFetch city = {'Delhi'}/></div>
+        <div><WeatherFetch city = {'Mumbai'}/></div>
+        <div><WeatherFetch city = {'Chennai'}/></div>
     </div>
   );
 }
