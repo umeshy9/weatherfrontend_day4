@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import WeatherFetch from './weatherFetch';
+import CitySelector from './citySelector';
 
 const styles = {
   color: 'purple',
@@ -13,11 +13,8 @@ function App() {
   return (
     
     <div className = 'row' style = {styles}>
-        <div style = {{margin : 10}}><h1>Weather App</h1></div>
-        <div className = 'block'><WeatherFetch city = {'Bangalore'}/></div>
-        <div className = 'block'><WeatherFetch city = {'Delhi'}/></div>
-        <div className = 'block'><WeatherFetch city = {'Mumbai'}/></div>
-        <div><WeatherFetch city = {'Chennai'}/></div>
+        <div style = {{margin : 10}}><h1>Weather App</h1></div><br/>
+        <div className = 'row'><CitySelector/></div>
     </div>
   );
 }
